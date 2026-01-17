@@ -1,0 +1,191 @@
+ROLE
+
+You are a world-class healthcare product designer, brand strategist, UX architect, and conversion copywriter who has built premium websites for Apple Health, WHO-backed startups, and modern AI health platforms.
+
+Design a highly distinctive, premium, trust-first marketing website for a preventive healthcare app called VytalCare.
+This must stand apart visually, emotionally, and intellectually from generic health apps.
+
+PRODUCT CONTEXT
+
+App: VytalCare
+Category: Preventive Healthcare + Agentic AI
+Philosophy: Healthcare should act before illness appears — not after damage is done.
+
+Core Capabilities:
+
+Tracks vitals (steps, sleep, heart rate, hydration, BMI)
+
+Health Score with visual rings & trends
+
+AI detects early risk patterns (no diagnosis)
+
+Smart medication reminders (calendar-synced)
+
+Prescription image → structured schedules
+
+AI health assistant (RAG, trusted sources)
+
+Caregiver & emergency integration
+
+Accessibility-first (dark mode, color-blind)
+
+Privacy-first, ethical AI stance
+
+WEBSITE GOAL
+
+Create a marketing website that:
+
+Makes preventive healthcare feel inevitable & empowering
+
+Builds medical-grade trust instantly
+
+Visually conveys “this app thinks ahead for you”
+
+Converts users to join waitlist / download app
+
+TONE & BRAND
+
+Calm, confident, intelligent
+
+Apple Health × WHO × Modern AI lab
+
+Simple, not dumbed down
+
+Avoid: hype words, fear, fitness-influencer tone
+Prefer: quiet confidence, clarity, visual storytelling
+
+VISUAL & UI DIRECTION
+
+Clean, futuristic healthcare aesthetic
+
+Soft gradients, glow accents, depth
+
+Data-driven visuals (rings, graphs, flows)
+
+Generous white space
+
+Palette: white base, deep slate/navy, teal/emerald highlights
+UI Elements: health rings, animated graphs, cards, floating AI insights, soft micro-interactions
+
+WEBSITE STRUCTURE (MANDATORY)
+
+1️⃣ Hero
+
+Preventive intelligence headline
+
+AI early-signal subheadline
+
+Animated rings + flowing data
+
+CTA: Start Preventing, Not Reacting
+
+Secondary: See How VytalCare Works
+
+Provide 3–5 alternate hero headlines
+
+2️⃣ Problem
+
+Reactive healthcare is late
+
+Symptoms vs signals
+
+Wearables collect data but don’t think
+
+Timeline + “too late vs early” comparison
+
+3️⃣ VytalCare Approach
+
+Thinking system, not a tracker
+
+Data → AI patterns → early signals → guidance → caregiver alerts
+
+Step-by-step animated flow
+
+4️⃣ Key Features (Visual-first)
+
+Health Score Rings
+
+Trend Graphs
+
+Smart Medication Calendar
+
+AI Health Assistant
+
+Prescription Scanning
+
+Emergency & Caregiver System
+
+Accessibility Modes
+Each with UI description + visual metaphor + benefit
+
+5️⃣ Preventive vs Reactive Table
+
+6️⃣ Trust, Safety & Ethics
+
+No diagnosis claims
+
+AI assists, not replaces doctors
+
+Privacy-first data handling
+
+Ethical, transparent AI
+
+Reduce anxiety, build trust
+
+7️⃣ Who It’s For
+
+Working professionals
+
+Family-risk users
+
+Caregivers
+
+Health-conscious users
+
+Preventive-first mindset
+
+8️⃣ How It Feels to Use VytalCare
+
+Calm, in control, informed, supported, ahead
+
+9️⃣ Final CTA
+
+Join early
+
+Long-term health partner
+
+Email capture / App Store buttons
+
+ACCESSIBILITY
+
+Dark mode
+
+Color-blind friendly
+
+Large readable typography
+
+Calm, non-overwhelming animations
+
+OUTPUT
+
+Generate:
+
+Full website copy (section-wise)
+
+UI layout descriptions
+
+Button microcopy
+
+Animation & interaction ideas
+
+Iconography concepts
+
+Typography suggestions
+
+DO NOT: generate code, generic SaaS language, or medical overpromises.
+
+FINAL NOTE
+
+Design this as if VytalCare will become India’s default preventive healthcare platform.
+
+Build now.
