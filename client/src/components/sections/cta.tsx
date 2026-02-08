@@ -4,10 +4,13 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useMagneticHover } from "@/hooks/use-magnetic-hover";
+import { motion } from "framer-motion";
 
 export function CTASection() {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
+  const { ref: buttonRef, position } = useMagneticHover(0.15);
 
   const mutation = useMutation({
     mutationFn: async (email: string) => {
@@ -40,7 +43,11 @@ export function CTASection() {
     <section id="cta" className="py-24 bg-white dark:bg-slate-950">
       <div className="container mx-auto px-6">
 
-        <div className="relative rounded-[2.5rem] overflow-hidden bg-teal-900 text-white px-6 py-20 text-center">
+        <motion.div
+          className="relative rounded-[2.5rem] overflow-hidden bg-teal-900 text-white px-6 py-20 text-center"
+          animate={{ filter: ["brightness(1)", "brightness(1.05)", "brightness(1)"] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        >
           {/* Decorative Gradients */}
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-teal-500/30 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-blue-600/30 via-transparent to-transparent" />
@@ -62,24 +69,38 @@ export function CTASection() {
                 required
                 className="h-14 px-6 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-teal-100/50 focus:outline-hidden focus:ring-2 focus:ring-teal-400 w-full sm:w-80"
               />
-              <Button
-                type="submit"
-                disabled={mutation.isPending}
-                size="lg"
-                className="bg-white text-teal-900 hover:bg-teal-50 rounded-full h-14 px-8 font-bold text-lg"
+              <motion.div
+                style={{
+                  transform: `translate(${position.x}px, ${position.y}px)`,
+                }}
+                transition={{ type: "spring", stiffness: 150, damping: 15 }}
+                className="relative inline-block"
               >
-                {mutation.isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                Join Early Access
-              </Button>
+                <motion.div
+                  className="absolute inset-0 bg-white/40 rounded-full blur-xl"
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <Button
+                  ref={buttonRef as any}
+                  type="submit"
+                  disabled={mutation.isPending}
+                  size="lg"
+                  className="bg-white text-teal-900 hover:bg-teal-50 rounded-full h-14 px-8 font-bold text-lg relative z-10"
+                >
+                  {mutation.isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                  Join Early Access
+                </Button>
+              </motion.div>
             </form>
 
             <p className="mt-6 text-sm text-teal-200/60">
               Limited spots available for the beta program.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </section >
   );
 }
 

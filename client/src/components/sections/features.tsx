@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { 
-  Activity, 
-  Brain, 
-  CalendarHeart, 
-  ShieldAlert, 
-  ScanLine, 
-  HeartHandshake 
+import {
+  Activity,
+  Brain,
+  CalendarHeart,
+  ShieldAlert,
+  ScanLine,
+  HeartHandshake
 } from "lucide-react";
 
 const features = [
@@ -65,11 +65,15 @@ export function FeaturesSection() {
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
-              className="group p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-300 hover:-translate-y-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="group p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:shadow-teal-900/5 hover:brightness-105 transition-all duration-500 hover:-translate-y-1"
+              initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+              whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              transition={{
+                delay: idx * 0.12,
+                duration: 0.7,
+                ease: "easeOut"
+              }}
             >
               <div className={`w-12 h-12 rounded-2xl ${feature.color} bg-opacity-10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 <feature.icon className={`w-6 h-6 text-slate-900 dark:text-white`} />

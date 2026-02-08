@@ -18,12 +18,27 @@ export function ProblemSection() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-300/50 to-transparent dark:from-transparent dark:via-slate-700/50 dark:to-transparent -translate-y-1/2 hidden md:block" />
+          <motion.div
+            className="absolute top-1/2 left-0 right-0 h-px -translate-y-1/2 hidden md:block"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-500/60 to-transparent"
+              initial={{ x: "-100%" }}
+              whileInView={{ x: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-300/50 to-transparent dark:from-transparent dark:via-slate-700/50 dark:to-transparent" />
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 md:gap-28 relative">
             {/* Old Way */}
             <motion.div
-              className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-12 rounded-[2rem] shadow-lg shadow-slate-300/40 dark:shadow-slate-950/70 border border-slate-300/50 dark:border-slate-800/50 relative z-10 hover:shadow-xl hover:shadow-slate-300/50 transition-all duration-500"
+              className="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm p-12 rounded-[2rem] shadow-lg shadow-slate-300/40 dark:shadow-slate-950/70 border border-slate-300/50 dark:border-slate-800/50 relative z-10 hover:shadow-xl hover:shadow-slate-300/50 transition-all duration-500"
               initial={{ opacity: 0, x: -40, y: 20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
@@ -56,7 +71,11 @@ export function ProblemSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent rounded-[2rem]"
+                animate={{ opacity: [0.5, 0.8, 0.5] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              />
               <div className="absolute -top-3.5 left-8 bg-gradient-to-br from-teal-100 via-teal-50 to-emerald-50 text-teal-800 dark:from-teal-900/50 dark:via-teal-900/40 dark:to-emerald-900/40 dark:text-teal-300 text-[0.7rem] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md shadow-teal-500/20">Predictive Health</div>
               <p className="text-[0.65rem] uppercase tracking-[0.15em] text-slate-500/60 mb-4 font-semibold relative">Before symptoms appear</p>
               <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 tracking-tight relative">Act on Signals</h3>
