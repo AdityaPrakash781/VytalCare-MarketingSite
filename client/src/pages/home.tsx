@@ -4,6 +4,7 @@ import { ProblemSection } from "@/components/sections/problem";
 import { FeaturesSection } from "@/components/sections/features";
 import { TrustSection } from "@/components/sections/trust";
 import { CTASection } from "@/components/sections/cta";
+import { MissionSlider } from "@/components/sections/mission-slider";
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
         <FeaturesSection />
         <TrustSection />
         <CTASection />
+        <MissionSlider />
       </main>
-      
+
       <footer className="py-12 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
