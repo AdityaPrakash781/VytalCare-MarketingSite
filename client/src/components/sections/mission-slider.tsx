@@ -160,7 +160,6 @@ export function MissionSlider() {
                                     transition={{ delay: 0.25, duration: 0.4 }}
                                 >
                                     Learn more
-                                    <ArrowRight className="w-5 h-5" />
                                 </motion.a>
                             </div>
                         </div>
