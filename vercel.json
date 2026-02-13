@@ -4,10 +4,6 @@
   "framework": "vite",
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "dist/index.cjs"
-    },
-    {
       "handle": "filesystem"
     },
     {
