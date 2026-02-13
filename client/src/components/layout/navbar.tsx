@@ -18,6 +18,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "Approach", href: "#approach" },
     { name: "Features", href: "#features" },
     { name: "Science", href: "#trust" },

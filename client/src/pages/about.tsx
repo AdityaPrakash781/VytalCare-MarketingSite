@@ -173,42 +173,73 @@ export default function About() {
 
                 {/* Impact Section */}
                 <section className="py-24 relative overflow-hidden">
-                    <div className="container mx-auto px-6 max-w-4xl text-center">
-                        <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-200 dark:via-teal-800 to-transparent mb-16 opacity-50" />
+                    <div className="container mx-auto px-6 max-w-6xl">
+                        {/* Divider */}
+                        <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-200 dark:via-teal-800/60 to-transparent mb-20 opacity-50" />
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 mb-8">
-                                <Globe className="w-6 h-6 animate-pulse" />
-                            </div>
+                        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                            {/* Text Content */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="text-left"
+                            >
+                                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 mb-8 shadow-sm">
+                                    <Globe className="w-6 h-6 animate-pulse" />
+                                </div>
 
-                            <h2 className="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-8">
-                                Every Membership Creates Impact
-                            </h2>
+                                <h2 className="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-8 leading-tight">
+                                    Every Membership Creates Impact
+                                </h2>
 
-                            <div className="space-y-6 text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed text-pretty">
-                                <p>
-                                    While advanced healthcare tools are rapidly evolving, billions of people still lack access to basic preventative care, early diagnostics, and reliable medical guidance. Preventable diseases continue to burden communities not because solutions don’t exist — but because access is uneven.
-                                </p>
-                                <p>
-                                    VytalCare commits a portion of every membership toward initiatives that support preventative healthcare education, early detection programs, and digital health infrastructure in underserved communities. By joining VytalCare, you’re not only investing in your own health intelligence — you’re helping extend proactive healthcare to people who need it most.
-                                </p>
-                                <p>
-                                    Every membership helps move healthcare from reactive treatment to early intervention, reduces long-term system strain, and supports a future where better health decisions are accessible to everyone. <span className="text-teal-700 dark:text-teal-400 font-medium">Because proactive healthcare shouldn’t be a privilege — it should be the global standard.</span>
-                                </p>
-                            </div>
+                                <div className="space-y-6 text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed text-pretty">
+                                    <p>
+                                        While advanced healthcare tools are rapidly evolving, billions of people still lack access to basic preventative care, early diagnostics, and reliable medical guidance. Preventable diseases continue to burden communities not because solutions don’t exist — but because access is uneven.
+                                    </p>
+                                    <p>
+                                        VytalCare commits a portion of every membership toward initiatives that support preventative healthcare education, early detection programs, and digital health infrastructure in underserved communities. By joining VytalCare, you’re not only investing in your own health intelligence — you’re helping extend proactive healthcare to people who need it most.
+                                    </p>
+                                    <p>
+                                        Every membership helps move healthcare from reactive treatment to early intervention, reduces long-term system strain, and supports a future where better health decisions are accessible to everyone. <span className="text-teal-700 dark:text-teal-400 font-medium">Because proactive healthcare shouldn’t be a privilege — it should be the global standard.</span>
+                                    </p>
+                                </div>
 
-                            <div className="mt-12 inline-block px-6 py-3 rounded-full bg-teal-50/50 dark:bg-teal-900/10 border border-teal-100 dark:border-teal-800/50 backdrop-blur-sm">
-                                <span className="text-teal-700 dark:text-teal-300 font-medium text-sm flex items-center gap-2">
-                                    <Activity className="w-4 h-4" />
-                                    Preventative care reduces 60% of chronic disease risk
-                                </span>
-                            </div>
-                        </motion.div>
+                                <div className="mt-10 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-teal-50/80 dark:bg-teal-900/20 border border-teal-100 dark:border-teal-800/50 backdrop-blur-sm shadow-sm">
+                                    <Activity className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                                    <span className="text-teal-800 dark:text-teal-200 font-medium text-sm">
+                                        Preventative care reduces 60% of chronic disease risk
+                                    </span>
+                                </div>
+                            </motion.div>
+
+                            {/* Image Content */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="relative"
+                            >
+                                <div className="aspect-[4/5] md:aspect-square rounded-[2rem] overflow-hidden shadow-2xl relative z-10 border border-white/20 dark:border-white/10 group">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 opactiy-60" />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000"
+                                        alt="Global healthcare access"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute bottom-6 left-6 right-6 z-20">
+                                        <p className="text-white/90 text-sm font-medium tracking-wide">
+                                            Connecting care to communities worldwide.
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* Decorative elements */}
+                                <div className="absolute -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-[80px] -z-10" />
+                                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-[80px] -z-10" />
+                            </motion.div>
+                        </div>
                     </div>
                 </section>
 
