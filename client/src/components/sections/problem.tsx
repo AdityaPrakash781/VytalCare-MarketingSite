@@ -82,7 +82,7 @@ export function ProblemSection() {
                     opacity: [0, 1, 0]
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 2.2,
                     ease: "easeInOut",
                     repeat: Infinity,
                     repeatDelay: 1
