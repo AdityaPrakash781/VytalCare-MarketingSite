@@ -3,7 +3,7 @@ import { Lock, FileCheck, Eye, Smartphone } from "lucide-react";
 
 export function TrustSection() {
   return (
-    <section id="trust" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section id="trust" className="scroll-mt-20 py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl" />

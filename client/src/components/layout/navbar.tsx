@@ -1,10 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { ColorBlindToggle } from "@/components/color-blind-toggle";
+
+/**
+ * Smooth-scroll to a DOM element by ID.
+ * CSS `scroll-margin-top` on the sections handles the fixed navbar offset.
+ */
+function smoothScrollTo(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +30,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // After navigating to home with a hash, smooth-scroll to the target section
+  useEffect(() => {
+    if (location === "/" && window.location.hash) {
+      const id = window.location.hash.slice(1);
+      // Small delay to let the home page render first
+      const timer = setTimeout(() => smoothScrollTo(id), 150);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Approach", href: "#approach" },
@@ -26,12 +47,38 @@ export function Navbar() {
     { name: "Science", href: "#trust" },
   ];
 
+  /**
+   * Handles navigation for hash-based links.
+   * - If already on the home page, smooth-scroll to the section.
+   * - If on another page (e.g. /about), navigate to /#section first;
+   *   the useEffect above will pick up the hash and scroll after render.
+   */
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      if (href === "/") {
+        // "Home" link — just navigate normally
+        return;
+      }
+
+      e.preventDefault();
+      const sectionId = href.replace("#", "");
+
+      if (location === "/") {
+        // Already on home — just smooth-scroll
+        smoothScrollTo(sectionId);
+      } else {
+        // On another page — navigate to home with hash
+        setLocation(`/${href}`);
+      }
+
+      setMobileMenuOpen(false);
+    },
+    [location, setLocation]
+  );
+
   const handleJoinWaitlist = () => {
     if (location === "/") {
-      const ctaSection = document.getElementById("cta");
-      if (ctaSection) {
-        ctaSection.scrollIntoView({ behavior: "smooth" });
-      }
+      smoothScrollTo("cta");
     } else {
       setLocation("/#cta");
     }
@@ -71,7 +118,8 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer"
             >
               {link.name}
             </a>
@@ -118,8 +166,8 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-medium text-slate-800 dark:text-slate-100 py-2 border-b border-slate-100 dark:border-slate-800/50"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-xl font-medium text-slate-800 dark:text-slate-100 py-2 border-b border-slate-100 dark:border-slate-800/50 cursor-pointer"
               >
                 {link.name}
               </a>

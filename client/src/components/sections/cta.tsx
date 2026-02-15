@@ -64,7 +64,7 @@ export function CTASection() {
   };
 
   return (
-    <section id="cta" className="py-24 bg-white dark:bg-[#0B1221] relative overflow-hidden transition-colors duration-300">
+    <section id="cta" className="scroll-mt-20 py-24 bg-white dark:bg-[#0B1221] relative overflow-hidden transition-colors duration-300">
       {/* Dark Mode Background Layers */}
       <div className="absolute inset-0 pointer-events-none hidden dark:block">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light" />
