@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { ColorBlindToggle } from "@/components/color-blind-toggle";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,6 +79,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <ColorBlindToggle />
           <ModeToggle />
           <Button
             variant="ghost"
@@ -97,6 +99,7 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="flex items-center gap-2 md:hidden">
+          <ColorBlindToggle />
           <ModeToggle />
           <button
             className="text-slate-700 dark:text-slate-200"
